@@ -1,9 +1,5 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
-
+本博客为ykindred的个人博客, 基于开源框架Astro的开源模板 [Fuwari](https://github.com/saicaca/fuwari).
 ::github{repo="saicaca/fuwari"}
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+使用的所有资源来自网络, 仅供个人学习使用, 如有侵权, 请联系我.
