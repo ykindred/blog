@@ -5,7 +5,7 @@ description: ''
 image: ''
 tags: []
 category: ''
-draft: false 
+draft: true
 lang: ''
 ---
 ![6.006PS1-1-1](./6.006photos/6.006PS1-1-1.png)
