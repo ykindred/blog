@@ -125,4 +125,75 @@ p1.second; // 4
 ### 其他注意事项
 有序容器内pair会自动按先first升序, 然后second升序的顺序来储存. 无序容器需要手动定义hash
 
-## std::map
+## std::set
+元素唯一, 按`<`自动升序, O(log n)操作.
+
+有重复元素请用std::multiset, 不需要升序且需要均摊O(1)请用std::unordered_set
+### 构造
+```cpp
+std::set<int> st1;
+std::set<int> st2 = {2, 3, 5, 7, 11}    // 列表构造. 自动升序排列
+std::set<int, greater<int>> st3; // 降序 
+std::set<int> st4(st1); // 拷贝构造
+std::set<int> st5(st1.begin(), st1.end()); // 区间构造
+```
+
+### 状态
+```cpp
+st1.empty();
+st1.size();
+```
+
+### 访问
+支持迭代器遍历
+```cpp
+for (auto& i: st2);
+
+for (auto it = st2.begin(); it != st2.end(); ++it);
+
+for (auto it = st2.rbegin(); it != st2.rend(); ++it); // 反向遍历
+
+// 请注意set的迭代器不支持随机访问, 也就是说不能使用st.begin() + 1这样的写法.
+// 应当使用:
+auto it = st.begin();
+std::advance(it, 1);        // 原地前进 1 步（O(1)）
+auto it2 = std::next(st.begin(), 5);  // 返回前进 5 步的新迭代器（O(5)）
+auto it3 = std::prev(st.end(), 2);    // 返回倒数第 2 个（O(2)）
+
+```
+
+### 增
+```cpp
+st1.insert(3); // 返回一个std::pair类型, 第一个指向等于x的元素, 第二个返回是否插入成功
+st1.insert({2, 4, 6}); // void
+st1.insert(st2.begin(), st2.end()); // void
+st1.emplace(12); // 插入, 但是直接构造
+st1.merge(st2);
+```
+
+### 删
+```cpp
+st1.erase(3);   // 按键删除, 返回删掉的数量, size_t类型.
+auto it = st1.begin();
+st1.erase(it);  // 按迭代器删除, 返回被删元素的下一个位置的迭代器
+st1.erase(it, st1.end()); // 按区间删除, 返回last的迭代器
+st1.clear();
+auto temp1 = st1.extract(2);
+auto temp2 = st1.extract(it);        // 直接摘出节点
+st2.insert(temp1);
+
+st1.swap(st2);
+```
+
+### 改
+```cpp
+// 不支持, 请先删后插
+```
+
+### 查
+```cpp
+st1.find(2);        // 返回迭代器
+st1.upper_bound(2);
+st1.lower_bound(2);
+st1.count(2);
+```
