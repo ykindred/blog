@@ -1,5 +1,5 @@
 ---
-title: 笔记 FGIM (FGIM: a Fast Graph-based Indexes Merging Framework for Approximate Nearest Neighbor Search)
+title: 笔记 FGIM (FGIM a Fast Graph-based Indexes Merging Framework for Approximate Nearest Neighbor Search)
 published: 2026-07-23
 description: ''
 image: ''
